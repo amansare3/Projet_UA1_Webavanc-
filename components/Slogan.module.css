@@ -1,0 +1,24 @@
+
+.sloganContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* full viewport height */
+    background-image: url('/pexels-823sl-2294361.jpg');
+    background-size: cover; /* Ensure the image covers the entire container */
+    background-position: center; /* Center the image */
+}
+  .sloganText { 
+    font-family: 'Graduate-Regular', sans-serif;
+    font-size: 4rem;
+    color: #8e4040;
+    font-weight: bold;
+    text-align: center; 
+}
+@font-face { 
+    font-family: 'Graduate-Regular';
+    src: url('/fonts/Graduate-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+ }
+  

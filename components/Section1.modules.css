@@ -1,0 +1,31 @@
+.sectionContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.imageContainer {
+    width: auto;
+    max-width: 200px;
+    margin-bottom: 1rem;
+}
+
+.imageContainer image{
+    width: 50px;
+    height: auto;
+}
+
+.subText {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #8e4040;
+}
+
+.paragraph {
+    font-size: 1.2rem;
+    max-width: 800px;
+    line-height: 1.5;
+}
