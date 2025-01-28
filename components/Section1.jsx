@@ -1,18 +1,56 @@
-import styles from './Section1.modules.css';
+"use client"
+import styles from "./Section1.module.css";
 
 const Section = () => {
   return (
     <div className={styles.sectionContainer}>
+      {/* Nouvelle section avec 3 conteneurs cliquables */}
+      <div className={styles.threeContainers}>
+        {/* Conteneur 1 : Cours CrossFit */}
+        <div className={styles.container}>
+          <a href="/link1" className={styles.link}>
+            <img
+              src="/crossFit.jpg"
+              alt="Container 1"
+              className={styles.containerImage}
+            />
+            <p className={styles.containerText}>Cours CrossFit</p>
+            <p className={styles.containerDescription}>
+              Entraînements intensifs pour améliorer votre force, votre endurance et votre agilité grâce à des exercices variés et stimulants.
+            </p>
+          </a>
+        </div>
 
-      <div className={styles.imageContainer}>
-<div className={styles.image}> 
-      <img src="/gymmachines.jpg" alt="Gym Machines" className='styles.gym' width={400}/>
+        {/* Conteneur 2 : Cours Kickboxing */}
+        <div className={styles.container}>
+          <a href="/link2" className={styles.link}>
+            <img
+              src="/kickBoxing.jpg"
+              alt="Container 2"
+              className={styles.containerImage}
+            />
+            <p className={styles.containerText}>Cours Kickboxing</p>
+            <p className={styles.containerDescription}>
+              Apprenez les techniques de combat tout en vous défoulant, en améliorant votre coordination et en augmentant votre condition physique.
+            </p>
+          </a>
+        </div>
+
+        {/* Conteneur 3 : Cours de Musculation */}
+        <div className={styles.container}>
+          <a href="/link3" className={styles.link}>
+            <img
+              src="/trm.jpg"
+              alt="Container 3"
+              className={styles.containerImage}
+            />
+            <p className={styles.containerText}>Cours de Musculation</p>
+            <p className={styles.containerDescription}>
+              Développez votre force et votre masse musculaire avec des exercices ciblés et un équipement de pointe.
+            </p>
+          </a>
+        </div>
       </div>
-      </div>
-      <h2 className={styles.subText}>Why Iron Haven?</h2>
-      <p className={styles.paragraph}>
-        At Iron Haven, we believe you deserve more than just a gym — you deserve an elevated fitness experience. Here, your journey to a healthier, stronger you is our top priority. With state-of-the-art equipment, expert guidance, and a community that motivates, we’re dedicated to helping you reach your personal best. At Iron Haven, fitness is tailored to you because we believe in putting you first.
-      </p>
     </div>
   );
 };
