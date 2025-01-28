@@ -2,7 +2,23 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import styles from "./layout.module.css";
 import { } from 'next/font/google';
+import { Roboto, Poppins } from 'next/font/google';//for the fonts
 
+const roboto = Roboto({ //our text
+    subsets: ['latin'],
+    weight: '400' , //thickness
+    display: 'swap',
+    variable: '--font-roboto'
+    })
+    
+    const poppins = Poppins({ //our title
+    subsets: ['latin'],
+    weight: ['700' , '400' ],//thickness
+    style: ['normal' , 'italic'],
+    display: 'swap' ,//swap
+    variable: '--font-poppins'
+    })
+    
 import './globals.css';
 export const metadata = {
     title: "Create Next App"
