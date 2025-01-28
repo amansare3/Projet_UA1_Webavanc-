@@ -8,7 +8,7 @@
 }
 
 .container {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
@@ -25,17 +25,32 @@
 
 .containerImage {
   width: 100%;
-  height: auto;
-  border-bottom: 2px solid #ddd;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 3px solid #ff6600;
 }
 
 .containerText {
-  padding: 1.2rem;
-  font-size: 1.2rem;
+  padding: 1rem 1rem 0;
+  font-size: 1.3rem;
   font-weight: bold;
-  color: #000;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  color: #333;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.container:hover .containerText {
+  color: #ff6600;
+}
+
+.containerDescription {
+  padding: 0 1rem 1.5rem;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  text-align: justify;
+  margin-top: 0.5rem;
 }
 
 @media (max-width: 768px) {
@@ -43,11 +58,35 @@
     grid-template-columns: 1fr 1fr;
     gap: 15px;
   }
+
+  .containerImage {
+    height: 150px;
+  }
+
+  .containerText {
+    font-size: 1.2rem;
+  }
+
+  .containerDescription {
+    font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 480px) {
   .threeContainers {
     grid-template-columns: 1fr;
     gap: 10px;
+  }
+
+  .containerImage {
+    height: 120px;
+  }
+
+  .containerText {
+    font-size: 1.1rem;
+  }
+
+  .containerDescription {
+    font-size: 0.9rem;
   }
 }
