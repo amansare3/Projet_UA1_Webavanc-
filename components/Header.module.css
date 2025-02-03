@@ -1,13 +1,80 @@
+
 .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 5%;
+    background-color: #83959F;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 1rem;
-    background-color: #ffffff; 
+    align-items: center;
+    z-index: 100;
 }
 
-.header h1 {
-    margin: 0px
+.logo img {
+    height: 80px;
+    width: auto;
 }
 
+.navbar {
+    display: flex;
+}
 
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 30px;
+    transition: 0.3s;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: .3s;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+}
+
+.menuToggle {
+    display: none;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .menuToggle {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #83959F;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+}

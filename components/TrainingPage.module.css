@@ -1,4 +1,3 @@
-/* Conteneur principal */
 .content {
     display: flex;
     align-items: center;
@@ -9,7 +8,6 @@
     padding: 2rem;
 }
 
-/* Image à gauche */
 .imageContainer {
     flex: 1;
     max-width: 50%;
@@ -21,19 +19,17 @@
     border-radius: 0;
 }
 
-/* Texte à droite */
 .textContainer {
     flex: 1;
     text-align: left;
     
 }
 
-/* Image d'en-tête */
 .headerImage {
     position: relative;
     width: 100%;
     height: 300px;
-    background-image: url('/kick.jpg');
+    background-image: url('/PersonalTrainingHead.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -47,7 +43,6 @@
     color: white;
 }
 
-/* Sous-titre */
 .subtitle {
     font-size: 1rem;
     letter-spacing: 2px;
@@ -55,7 +50,6 @@
     text-transform: uppercase;
 }
 
-/* Titre principal */
 .title {
     font-size: 2.5rem;
     color: #0088cc;
@@ -63,7 +57,6 @@
     margin: 0.5rem 0;
 }
 
-/* Paragraphe */
 .p {
     font-size: 1rem;
     color: #444;

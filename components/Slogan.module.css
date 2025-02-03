@@ -3,10 +3,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* full viewport height */
+    height: 100vh; 
     background-image: url('/pexels-823sl-2294361.jpg');
-    background-size: cover; /* Ensure the image covers the entire container */
-    background-position: center; /* Center the image */
+    background-size: cover; 
+    background-position: center; 
 }
   .sloganText { 
     font-family: 'Graduate-Regular', sans-serif;

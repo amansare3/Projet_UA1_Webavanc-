@@ -1,26 +1,20 @@
-import Section1 from '@/components/Section1';
-import './page.module.css'
-import Slogan from '@/components/Slogan';
-import Navbar from '@/components/Navbar';
-
-
-
-    
+import Header from "@/components/Header";
+import Section1 from "@/components/Section1";
+import Slogan from "@/components/Slogan";
+import "./page.module.css";
 
 export default function Acceuil() {
-    return <>
-   
-    <Navbar></Navbar>
-   
- <section>
-        <Slogan></Slogan>
-        <br /> <br /> <br />
-       
-    </section>
-    
-    <section>
-    <Section1></Section1>
-    </section>
+  return (
+    <>
+      <Header />
+      <section>
+        <Slogan />
+        <div className="spacer"></div>
+      </section>
+      
+      <section>
+        <Section1 />
+      </section>
     </>
-    
+  );
 }
