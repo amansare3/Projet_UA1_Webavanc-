@@ -24,7 +24,7 @@ export default function Header() {
         <Link href="/personaltraining">Personal Training</Link>
         <Link href="/">Group Classes</Link>
         <Link href="/">Membership</Link>
-        <Link href="/">Contact</Link>
+        <Link href="/contact">Contact</Link>
       </nav>
     </header>
   );
