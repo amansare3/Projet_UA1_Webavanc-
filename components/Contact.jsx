@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import styles from "./Contact.module.css"; 
+import { validateForm } from "../validation/validateForm"
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -21,34 +22,12 @@ const Contact = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const validateForm = () => {
-    const newErrors = {};
-    let formIsValid = true;
-
-    if (!formData.name) {
-      newErrors.name = "Le nom est requis.";
-      formIsValid = false;
-    }
-
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!formData.email || !emailPattern.test(formData.email)) {
-      newErrors.email = "L'email est requis et doit être valide.";
-      formIsValid = false;
-    }
-
-    if (!formData.message) {
-      newErrors.message = "Le message est requis.";
-      formIsValid = false;
-    }
-
-    setErrors(newErrors);
-    return formIsValid;
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (validateForm()) {
+    const { formIsValid, newErrors } = validateForm(formData); 
+
+    if (formIsValid) {
       alert("Message envoyé avec succès!");
       console.log("Données du formulaire:", formData);
       setFormData({
@@ -56,6 +35,8 @@ const Contact = () => {
         email: "",
         message: "",
       });
+    } else {
+      setErrors(newErrors);  
     }
   };
 
