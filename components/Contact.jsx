@@ -1,8 +1,8 @@
-"use client"; 
+"use client";
 
 import React, { useState } from "react";
 import styles from "./Contact.module.css"; 
-import { validateForm } from "../validation/validateForm"
+import { validateForm } from "../validation/validateForm"; 
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,33 +17,59 @@ const Contact = () => {
     message: "",
   });
 
+  const [successMessage, setSuccessMessage] = useState(""); 
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { formIsValid, newErrors } = validateForm(formData); 
+    const { formIsValid, newErrors } = validateForm(formData);
 
     if (formIsValid) {
-      alert("Message envoyé avec succès!");
-      console.log("Données du formulaire:", formData);
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-      });
+      try {
+        const response = await fetch("/api/envoye-formulaire", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          console.log("Message envoyé avec succès!");
+          setSuccessMessage("Votre message a été envoyé avec succès !"); 
+          setFormData({
+            name: "",
+            email: "",
+            message: "",
+          });
+
+          //  réinitialiser le message de succès 
+          setTimeout(() => {
+            setSuccessMessage("");
+          }, 5000);
+        } else {
+          console.error("Erreur lors de l'envoi du message:", data.errors);
+          setErrors(data.errors); 
+        }
+      } catch (error) {
+        console.error("Erreur réseau:", error);
+      }
     } else {
-      setErrors(newErrors);  
+      setErrors(newErrors);
     }
   };
 
   return (
     <div className={styles.contactFormWrapper}>
       <div className={styles.contactForm}>
-        <h2>Contactez-nous</h2> 
+        <h2>Contactez-nous</h2>
         <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="name">Nom :</label>
@@ -81,6 +107,12 @@ const Contact = () => {
           </div>
 
           <button type="submit">Envoyer</button>
+
+          {successMessage && (
+            <div className={styles.successMessage}>
+              <p>{successMessage}</p>
+            </div>
+          )}
         </form>
       </div>
     </div>

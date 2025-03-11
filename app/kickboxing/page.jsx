@@ -1,4 +1,11 @@
 import TrainingPage from "@/components/TrainingPage";
+/**
+ * @type {import("next").Metadata}
+ */
+export const metadata = {
+  title: 'Kickboxing | Cours Sportifs',
+  description: 'Apprenez les techniques de kickboxing tout en améliorant votre coordination, force, agilité et endurance grâce à des séances adaptées à tous les niveaux.'
+}
 
 export default function KickBoxing() {
   return (

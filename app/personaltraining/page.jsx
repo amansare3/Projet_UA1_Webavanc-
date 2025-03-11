@@ -1,4 +1,11 @@
 import TrainingPage from "@/components/TrainingPage";
+/**
+ * @type {import("next").Metadata}
+ */
+export const metadata = {
+  title: 'Personal Training | Fitness Courses',
+  description: 'Achieve your fitness goals with personalized coaching in Boxing, Powerlifting, Bodybuilding, and Athlete Training, guided by expert trainers.'
+}
 
 export default function PersonalTraining() {
   return (
