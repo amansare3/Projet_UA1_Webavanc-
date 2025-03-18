@@ -1,11 +1,11 @@
 "use client";
 import Link from "next/link";
 import styles from "./Section1.module.css";
-
+// Définition des données des cours à afficher
 const courses = [
   {
     href: "/crossfit",
-    imageSrc: "/crossFit.jpg",
+    imageSrc: "/crossFit.webp",
     altText: "Cours CrossFit",
     title: "Cours CrossFit",
     description:
@@ -28,7 +28,7 @@ const courses = [
       "Développez votre force et votre masse musculaire avec des exercices ciblés et un équipement de pointe.",
   },
 ];
-
+// Composant Section qui rend la liste des cours
 const Section = () => {
   return (
     <div className={styles.sectionContainer}>

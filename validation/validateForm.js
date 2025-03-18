@@ -1,7 +1,10 @@
+// Fonction de validation de formulaire
 export const validateForm = (formData) => {
     const newErrors = {};
     let formIsValid = true;
-  
+    
+  // Vérification des champs
+
     if (!formData.name) {
       newErrors.name = "Le nom est requis.";
       formIsValid = false;

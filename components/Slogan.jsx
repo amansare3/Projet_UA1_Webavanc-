@@ -1,5 +1,5 @@
 import styles from './Slogan.module.css';
-
+//affiche un slogan principal pour le site.
 const Slogan = () => {
   return (
     <div className={styles.sloganContainer}>

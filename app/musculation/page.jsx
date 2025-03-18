@@ -1,13 +1,14 @@
 import TrainingPage from "@/components/TrainingPage";
 
 /**
+ * Métadonnées pour la page Musculation
  * @type {import("next").Metadata}
  */
 export const metadata = {
   title: 'Musculation | Cours Sportifs',
   description: 'Améliorez votre force et masse musculaire avec des programmes personnalisés et des équipements de pointe, adaptés à tous les niveaux.'
 }
-
+//Fonction représentant la page Musculation.
 export default function Musculation() {
   return (
     <TrainingPage

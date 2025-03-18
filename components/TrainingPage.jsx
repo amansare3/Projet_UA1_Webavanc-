@@ -2,7 +2,7 @@
 
 import Header from "@/components/Header";
 import styles from "./TrainingPage.module.css";
-
+//rend une page dédiée à un entraînement spécifique.
 const TrainingPage = ({ title, imageSrc, description }) => {
   return (
     <>

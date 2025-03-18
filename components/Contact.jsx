@@ -5,6 +5,7 @@ import styles from "./Contact.module.css";
 import { validateForm } from "../validation/validateForm"; 
 
 const Contact = () => {
+    // Définition de l'état du formulaire et des erreurs
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,19 +19,20 @@ const Contact = () => {
   });
 
   const [successMessage, setSuccessMessage] = useState(""); 
-
+  // Fonction pour gérer les changements dans les champs du formulaire
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-
+  // Fonction pour gérer la soumission du formulaire
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+ // Validation du formulaire
     const { formIsValid, newErrors } = validateForm(formData);
 
     if (formIsValid) {
       try {
+        // Envoi des données du formulaire
         const response = await fetch("/api/envoye-formulaire", {
           method: "POST",
           headers: {

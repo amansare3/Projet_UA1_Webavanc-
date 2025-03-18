@@ -1,12 +1,14 @@
 import TrainingPage from "@/components/TrainingPage";
 
 /**
+ * Métadonnées pour la page CrossFit
  * @type {import("next").Metadata}
  */
 export const metadata = {
   title: 'CrossFit | Cours Sportifs',
   description: 'Rejoignez nos entraînements de CrossFit pour améliorer votre force, endurance, agilité et mobilité, avec des séances adaptées à tous les niveaux et un encadrement professionnel.'
 }
+// * Fonction représentant la page CrossFit.
 export default function CrossFit() {
   return (
     <TrainingPage
